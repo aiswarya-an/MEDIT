@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adherence Reports - MediTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-full">
+      <div class="back-btn-container">
+        <button
+          class="btn-back"
+          onclick="location.href = 'patient_dashboard.html'"
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+      <h1>📊 Adherence Reports</h1>
+
+      <div class="card">
+        <h3>Generate Report</h3>
+        <p>Select a timeframe to view your medication adherence data.</p>
+
+        <div
+          class="button-group"
+          style="display: flex; gap: 10px; margin-top: 15px"
+        >
+          <button id="weeklyBtn" style="width: auto">Weekly Report</button>
+          <button id="exportBtn" style="width: auto; background: var(--accent)">
+            Export Full Report
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Report Data</h3>
+        <div id="reportContainer" class="table-container">
+          <p style="color: #666; font-style: italic">
+            Select a report type above to load data...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/reports.js"></script>
+  </body>
+</html>

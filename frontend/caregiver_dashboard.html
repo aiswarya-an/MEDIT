@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caregiver Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Caregiver Panel</h3>
+        <a href="caregiver_dashboard.html">Dashboard</a>
+        <a href="select_patient.html">Select Patient</a>
+        <a href="profile.html">My Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+
+      <div class="main">
+        <h2>Welcome, Caregiver</h2>
+        <div id="caregiverInfo">
+          <!-- Caregiver info loaded here -->
+        </div>
+
+        <h2>Pending Link Requests</h2>
+        <div id="linkRequestsContainer">Loading...</div>
+      </div>
+    </div>
+
+    <script src="js/caregiverDashboard.js"></script>
+  </body>
+</html>

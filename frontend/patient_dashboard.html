@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patient Dashboard - MediTrack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+      }
+
+      .sidebar {
+        width: 220px;
+        background: #1e293b;
+        color: white;
+        height: 100vh;
+        padding-top: 20px;
+      }
+
+      .sidebar h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .sidebar ul li:hover {
+        background: #334155;
+      }
+
+      .main {
+        flex: 1;
+        padding: 20px;
+        background: #f1f5f9;
+      }
+
+      .card {
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2 id="patientNameHeader"></h2>
+        <h3>Patient Panel</h3>
+        <!-- <ul>
+        <li><a href="patient_dashboard.html">Dashboard Overview</a></li>
+        <li><a href="medicines.html">Medicines</a></li>
+        <li><a href="reminders.html">Reminders</a></li>
+        <li><a href="prescriptions.html">Prescriptions</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="linkCaregiver.html">Link Caregiver</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul> -->
+
+        <ul>
+          <li>
+            <a href="#" onclick="loadSection('dashboard')"
+              >Dashboard Overview</a
+            >
+          </li>
+          <li><a href="#" onclick="loadSection('medicines')">Medicines</a></li>
+          <li><a href="#" onclick="loadSection('reminders')">Reminders</a></li>
+          <li>
+            <a href="#" onclick="loadSection('prescriptions')">Prescriptions</a>
+          </li>
+          <li><a href="#" onclick="loadSection('reports')">Reports</a></li>
+          <li>
+            <a href="#" onclick="loadSection('linkCaregiver')"
+              >Link Caregiver</a
+            >
+          </li>
+          <li><a href="#" onclick="loadSection('profile')">My Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main">
+        <div id="contentArea">
+          <!-- Default Dashboard Overview -->
+          <div class="card">
+            <h3>Total Medicines</h3>
+            <p id="totalMedicines">Loading...</p>
+          </div>
+
+          <div class="card">
+            <h3>Reminders</h3>
+            <ul id="todayReminders"></ul>
+          </div>
+
+          <div class="card">
+            <h3>Weekly Adherence</h3>
+            <ul id="weeklyAdherence"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="js/authGuard.js"></script>
+    <script src="js/patientDashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prescriptions - MediTrack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <div class="sidebar">
+        <h2>MediTrack</h2>
+        <ul>
+          <ul>
+            <li><a href="patient_dashboard.html">Dashboard Overview</a></li>
+            <li><a href="medicines.html">Medicines</a></li>
+            <li><a href="prescriptions.html">Prescriptions</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="linkCaregiver.html">Link Caregiver</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+          </ul>
+        </ul>
+      </div> -->
+
+    <div class="main-full">
+      <div class="back-btn-container">
+        <button
+          class="btn-back"
+          onclick="location.href = 'patient_dashboard.html'"
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+      <h1>📄 Prescriptions</h1>
+
+      <div class="card">
+        <h3>Upload Prescription (PDF Only)</h3>
+        <form id="uploadForm" class="grid-form">
+          <input type="file" id="fileInput" accept="application/pdf" required />
+          <button type="submit">Upload Document</button>
+        </form>
+        <p id="uploadMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>Recent Prescriptions</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Uploaded By</th>
+                <th>Date</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody id="prescriptionTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/authGuard.js"></script>
+    <script src="js/prescriptionUpload.js"></script>
+    <script src="js/prescriptionList.js"></script>
+  </body>
+</html>

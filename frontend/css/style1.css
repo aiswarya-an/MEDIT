@@ -1,0 +1,135 @@
+/* General resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #34495e;
+}
+
+/* Buttons */
+button {
+  padding: 6px 12px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Forms */
+form {
+  margin-bottom: 20px;
+}
+
+input,
+select {
+  padding: 6px 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+ul li {
+  padding: 8px;
+  background-color: #ecf0f1;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Low stock alert */
+li.low-stock {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  border: 1px solid #bdc3c7;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Navigation buttons */
+button + button {
+  margin-left: 10px;
+}
+
+/* File input */
+input[type="file"] {
+  width: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+    margin-top: 5px;
+  }
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

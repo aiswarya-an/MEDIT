@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Caregiver</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <div class="sidebar">
+        <h2>MediTrack</h2>
+        <ul>
+          <li><a href="patient_dashboard.html">Dashboard Overview</a></li>
+          <li><a href="medicines.html">Medicines</a></li>
+          <li><a href="prescriptions.html">Prescriptions</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="linkCaregiver.html">Link Caregiver</a></li>
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </div> -->
+
+    <div class="main-full">
+      <div class="back-btn-container">
+        <button
+          class="btn-back"
+          onclick="location.href = 'patient_dashboard.html'"
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+      <h1>🔗 Link Caregiver</h1>
+
+      <div class="card">
+        <h3>Send Link Request</h3>
+        <p style="margin-bottom: 15px; color: #555">
+          Enter your Caregiver's unique ID below to allow them to monitor your
+          adherence.
+        </p>
+
+        <form id="linkForm" style="display: flex; gap: 10px">
+          <input
+            type="number"
+            id="caregiverId"
+            placeholder="Enter Caregiver ID"
+            required
+          />
+          <button type="submit" style="width: auto; padding: 0 30px">
+            Send Request
+          </button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Current Link Status</h3>
+        <div id="linkStatusContainer"></div>
+      </div>
+    </div>
+
+    <script src="js/linkRequests.js"></script>
+  </body>
+</html>

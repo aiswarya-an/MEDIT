@@ -1,0 +1,182 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Patient</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h2>Select a Patient</h2>
+    <div id="patientsContainer">Loading linked patients...</div>
+
+    <script>
+      const caregiverId = localStorage.getItem("user_id"); // logged-in caregiver
+      const container = document.getElementById("patientsContainer");
+
+      async function loadLinkedPatients() {
+        try {
+          const res = await fetch(
+            `http://localhost:5000/api/caregiver/patients/${caregiverId}`,
+          );
+          const patients = await res.json();
+
+          if (!patients || patients.length === 0) {
+            container.innerHTML = "<p>No linked patients found.</p>";
+            return;
+          }
+
+          container.innerHTML = ""; // clear loading
+
+          patients.forEach((patient) => {
+            const div = document.createElement("div");
+            div.className = "patient-card";
+            div.innerHTML = `<strong>${patient.name}</strong> (${patient.email})`;
+
+            // Click → redirect to patientDashboard with patientId in URL
+            div.addEventListener("click", () => {
+              // Use relative path to frontend folder
+              window.location.href = `./patient_dashboard.html?patientId=${patient.user_id}`;
+            });
+
+            container.appendChild(div);
+          });
+        } catch (err) {
+          console.error(err);
+          container.innerHTML = "<p>Error loading patients.</p>";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadLinkedPatients);
+    </script>
+  </body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Patient - MediTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Specific styling for the patient selection cards */
+      .patient-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .patient-card {
+        background: var(--white);
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 5px solid var(--accent);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .patient-card:hover {
+        transform: translateY(-5px);
+        background: var(--bg-main);
+      }
+
+      .patient-card strong {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--sidebar-bg);
+      }
+
+      .patient-card span {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>MediTrack</h2>
+        <h3 style="font-size: 0.9rem; opacity: 0.8">Caregiver Portal</h3>
+        <ul>
+          <li><a href="select_patient.html">My Patients</a></li>
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <h1>👋 Welcome back!</h1>
+        <p>
+          Select a patient below to view their adherence and medication status.
+        </p>
+
+        <div class="card">
+          <h2>Your Linked Patients</h2>
+          <div id="patientsContainer" class="patient-grid">
+            <p>Loading linked patients...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const caregiverId = localStorage.getItem("user_id");
+      const container = document.getElementById("patientsContainer");
+
+      async function loadLinkedPatients() {
+        if (!caregiverId) {
+          window.location.href = "login.html";
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `http://localhost:5000/api/caregiver/patients/${caregiverId}`,
+          );
+          const patients = await res.json();
+
+          if (!patients || patients.length === 0) {
+            container.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                    <p>No linked patients found.</p>
+                    <p style="font-size: 0.9rem; color: #666;">Ask your patient to link using your ID: <strong>${caregiverId}</strong></p>
+                </div>`;
+            return;
+          }
+
+          container.innerHTML = ""; // clear loading
+
+          patients.forEach((patient) => {
+            const div = document.createElement("div");
+            div.className = "patient-card";
+            div.innerHTML = `
+                <strong>${patient.name}</strong>
+                <span>${patient.email}</span>
+            `;
+
+            // Click → redirect to patient_dashboard
+            div.addEventListener("click", () => {
+              window.location.href = `./patient_dashboard.html?patientId=${patient.user_id}`;
+            });
+
+            container.appendChild(div);
+          });
+        } catch (err) {
+          console.error(err);
+          container.innerHTML =
+            "<p>Error loading patients. Please check your connection.</p>";
+        }
+      }
+
+      function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", loadLinkedPatients);
+    </script>
+  </body>
+</html>

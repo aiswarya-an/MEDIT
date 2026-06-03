@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Medicines - MediTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <div class="sidebar">
+        <h2>MediTrack</h2>
+        <ul>
+          <li><a href="patient_dashboard.html">Dashboard Overview</a></li>
+          <li><a href="medicines.html">Medicines</a></li>
+          <li><a href="prescriptions.html">Prescriptions</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="linkCaregiver.html">Link Caregiver</a></li>
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </div> -->
+
+    <div class="main-full">
+      <div class="back-btn-container">
+        <button
+          class="btn-back"
+          onclick="location.href = 'patient_dashboard.html'"
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+    
+        <h1>💊 Medicines Management</h1>
+
+        <div class="card">
+          <form id="medicineForm" class="grid-form">
+            <h2>Add New Medicine</h2>
+
+            <input
+              type="text"
+              id="medicine_name"
+              placeholder="Medicine Name"
+              required
+            />
+            <input type="text" id="dosage" placeholder="Dosage" required />
+
+              <select id="frequency" required>
+                <option value="">Select Frequency</option>
+                <option>Once a day</option>
+                <option>Twice a day</option>
+                <option>Three times a day</option>
+              </select>
+
+            <label style="font-size: 12px; color: #666">Reminder Times</label>
+              <div id="timeContainer">
+                <input type="time" class="reminder-time" required />
+              </div>
+
+              <button type="button" onclick="addTimeField()" style="margin-top:5px">
+                + Add Another Time
+              </button>
+            <div style="display: flex; gap: 10px">
+              <div style="flex: 1">
+                <label style="font-size: 12px; color: #666">Start Date</label>
+                <input type="date" id="start_date" required />
+              </div>
+              <div style="flex: 1">
+                <label style="font-size: 12px; color: #666">End Date</label>
+                <input type="date" id="end_date" required />
+              </div>
+            </div>
+
+            <input
+              type="number"
+              id="stock_quantity"
+              placeholder="Stock Quantity"
+              required
+            />
+            <input
+              type="number"
+              id="refill_threshold"
+              placeholder="Refill Threshold"
+              required
+            />
+
+            <button type="submit" style="margin-top: 10px">Add Medicine</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Medicine List</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Dosage</th>
+                  <th>Frequency</th>
+                  <th>Stock</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="medicineTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="lowStockList"></div>
+        <div id="refillAlerts" class="alert-container"></div>
+      </div>
+    </div>
+    <div id="editModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h3 style="margin-top: 0; color: var(--sidebar-bg)">
+          Edit Medicine Details
+        </h3>
+        <hr
+          style="border: 0; border-top: 1px solid #eee; margin-bottom: 15px"
+        />
+
+        <label>Medicine Name</label>
+        <input type="text" id="edit_medicine_name" />
+
+        <label>Dosage</label>
+        <input type="text" id="edit_dosage" />
+
+        <label>Frequency</label>
+        <select id="edit_frequency">
+          <option>Once a day</option>
+          <option>Twice a day</option>
+          <option>Three times a day</option>
+        </select>
+
+        <div style="display: flex; gap: 10px">
+          <div style="flex: 1">
+            <label>Start Date</label>
+            <input type="date" id="edit_start_date" />
+          </div>
+          <div style="flex: 1">
+            <label>End Date</label>
+            <input type="date" id="edit_end_date" />
+          </div>
+        </div>
+
+        <label>Current Stock</label>
+        <input type="number" id="edit_stock_quantity" />
+
+        <label>Refill Threshold</label>
+        <input type="number" id="edit_refill_threshold" />
+        
+
+        <div style="display: flex; gap: 10px; margin-top: 20px">
+          <button onclick="updateMedicine()" style="background: var(--success)">
+            Update
+          </button>
+          <button onclick="closeModal()" style="background: var(--danger)">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/medicines.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - MediTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-full">
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="history.back()">← Back</button>
+      </div>
+      <h1>👤 My Profile</h1>
+
+      <div class="dashboard-grid">
+        <div class="card profile-card">
+          <div class="card-header">
+            <h3>Basic Information</h3>
+          </div>
+          <div id="profileContainer">
+            <div class="info-row">
+              <strong>Name</strong>
+              <span id="name">Loading...</span>
+            </div>
+            <div class="info-row">
+              <strong>Email</strong>
+              <span id="email">Loading...</span>
+            </div>
+            <div class="info-row">
+              <strong>Phone</strong>
+              <span id="phone">Loading...</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="dynamicDetailsCard"
+          class="card profile-card"
+          style="display: none"
+        >
+          <div id="patientSection" style="display: none">
+            <div class="card-header">
+              <h3>Patient Details</h3>
+            </div>
+            <div class="info-row">
+              <strong>Date of Birth</strong>
+              <span id="dob"></span>
+            </div>
+            <div class="info-row">
+              <strong>Gender</strong>
+              <span id="gender"></span>
+            </div>
+          </div>
+
+          <div id="caregiverSection" style="display: none">
+            <div class="card-header">
+              <h3>Caregiver Details</h3>
+            </div>
+            <div class="info-row">
+              <strong>Experience</strong>
+              <span id="experience"></span> Years
+            </div>
+            <div class="info-row">
+              <strong>Availability</strong>
+              <span id="availability"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+    <script>
+      // Small script addition to handle the "Dynamic Card" visibility
+      // based on your existing profile.js logic
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          const patientDisp =
+            document.getElementById("patientSection").style.display;
+          const caregiverDisp =
+            document.getElementById("caregiverSection").style.display;
+          if (patientDisp !== "none" || caregiverDisp !== "none") {
+            document.getElementById("dynamicDetailsCard").style.display =
+              "block";
+          }
+        }, 500); // Small delay to allow profile.js to fetch data
+      });
+    </script>
+  </body>
+</html>

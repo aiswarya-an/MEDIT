@@ -1,0 +1,328 @@
+/* MediTrack Master Stylesheet - Sage Green Theme */
+:root {
+  --bg-main: #cad2c5;
+  --sidebar-bg: #2f3e46;
+  --card-bg: #84a98c;
+  --accent: #52796f;
+  --text-dark: #2f3e46;
+  --white: #ffffff;
+  --danger: #d62828;
+  --success: #2d6a4f;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* --- Layout Structure --- */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  color: var(--bg-main);
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* .main {
+  flex: 1;
+  margin-left: 280px; /* Offset for fixed sidebar */
+/*padding: 40px;
+} */
+
+.main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto; /* Centers the content on the screen */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Sidebar Links --- */
+.sidebar h2,
+.sidebar h3 {
+  text-align: center;
+  color: var(--bg-main);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 15px;
+  margin: 8px 0;
+  color: var(--bg-main);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateX(5px);
+}
+
+/* --- Login / Signup Center Box --- */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container,
+.box {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+/* --- Forms & Inputs --- */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  box-sizing: border-box; /* Prevents overflow */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: var(--sidebar-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --- Cards & Dashboard --- */
+.card {
+  background: var(--white);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border-left: 8px solid var(--accent);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+th {
+  background: var(--accent);
+  color: var(--white);
+  padding: 15px;
+  text-align: left;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--bg-main);
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+/* --- Status Badges --- */
+.status-taken,
+.taken {
+  color: var(--success);
+  font-weight: bold;
+}
+.status-missed,
+.missed {
+  color: var(--danger);
+  font-weight: bold;
+}
+.status-pending,
+.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+/* --- Modals --- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+}
+
+/* --- Fix for Horizontal Crowding --- */
+/* --- Centered Layout for Pages without Sidebar --- */
+.main-full {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px; /* Limits width for better readability */
+  margin: 0 auto; /* Centers the container on the page */
+  padding: 40px 20px; /* Consistent top/bottom padding */
+  width: 100%; /* Ensures it takes up space */
+  box-sizing: border-box;
+}
+
+/* Optional: Make the page title look better */
+.main-full h1 {
+  margin-top: 10px;
+  color: var(--sidebar-bg);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+/* --- Form Grid (Prevents ultra-wide inputs) --- */
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for inputs */
+  gap: 15px;
+}
+
+.grid-form button,
+.grid-form h2 {
+  grid-column: span 2; /* Header and button take full width */
+}
+
+/* --- Responsive Tables --- */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Adds scrollbar only to table if it's too wide */
+}
+
+/* --- Profile Back Button --- */
+.back-btn {
+  width: auto; /* Don't make it full width */
+  padding: 10px 30px;
+  background: var(--accent);
+  margin-top: 20px;
+}
+
+/* Styled Back Button */
+.back-btn-container {
+  margin-bottom: 10px;
+}
+
+.btn-back {
+  display: inline-block;
+  background: var(--sidebar-bg);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background: var(--accent);
+  transform: translateX(-5px);
+}
+
+/* --- Profile Page Enhancements --- */
+.profile-header-simple {
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 15px;
+}
+
+.profile-header-simple p {
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+.profile-card {
+  height: fit-content;
+  transition: 0.3s;
+}
+
+.card-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--sidebar-bg);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row strong {
+  color: var(--sidebar-bg);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-row span {
+  color: #444;
+  font-weight: 500;
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MediTrack - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="center">
+    <div class="box">
+      <h2>MediTrack Register</h2>
+
+      <form id="registerForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+
+        <input type="email" id="email" placeholder="Email Address" required />
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Create Password"
+          required
+        />
+
+        <input
+          type="text"
+          id="phone_number"
+          placeholder="Phone Number"
+          required
+        />
+
+        <select
+          id="role"
+          required
+          style="
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          "
+        >
+          <option value="" disabled selected>Select Role</option>
+          <option value="patient">Patient</option>
+          <option value="caregiver">Caregiver</option>
+        </select>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <div id="message" style="margin-top: 10px; font-size: 14px"></div>
+
+      <div style="margin-top: 15px">
+        <a
+          href="login.html"
+          style="text-decoration: none; font-size: 14px; color: var(--primary)"
+          >Already have an account? Login</a
+        >
+      </div>
+    </div>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>

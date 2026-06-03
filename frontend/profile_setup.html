@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MediTrack - Profile Setup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="center">
+    <div class="box">
+      <h2>Complete Your Profile</h2>
+      <p style="margin-bottom: 20px; font-size: 14px; color: #666">
+        Tell us a bit more to personalize your experience.
+      </p>
+
+      <form id="profileForm">
+        <div id="patientFields" style="display: none">
+          <label
+            style="
+              display: block;
+              text-align: left;
+              margin-bottom: 5px;
+              font-size: 14px;
+            "
+            >Date of Birth</label
+          >
+          <input type="date" id="date_of_birth" />
+
+          <label
+            style="
+              display: block;
+              text-align: left;
+              margin-top: 10px;
+              margin-bottom: 5px;
+              font-size: 14px;
+            "
+            >Gender</label
+          >
+          <select
+            id="gender"
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 15px;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div id="caregiverFields" style="display: none">
+          <label
+            style="
+              display: block;
+              text-align: left;
+              margin-bottom: 5px;
+              font-size: 14px;
+            "
+            >Experience (Years)</label
+          >
+          <input
+            type="number"
+            id="experience"
+            min="0"
+            placeholder="Years of experience"
+          />
+
+          <label
+            style="
+              display: block;
+              text-align: left;
+              margin-top: 10px;
+              margin-bottom: 5px;
+              font-size: 14px;
+            "
+            >Availability Status</label
+          >
+          <select
+            id="availability"
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 15px;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="" disabled selected>Select Status</option>
+            <option value="Available">Available</option>
+            <option value="Busy">Busy</option>
+          </select>
+        </div>
+
+        <button type="submit" style="margin-top: 10px">Save Profile</button>
+      </form>
+
+      <div id="message" style="margin-top: 15px; font-size: 14px"></div>
+    </div>
+
+    <script src="js/profileSetup.js"></script>
+  </body>
+</html>

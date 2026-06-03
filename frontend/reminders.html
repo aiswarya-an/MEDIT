@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reminders - MediTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-full">
+      <!-- Back Button -->
+      <div
+        class="back-btn-container"
+        style="text-align: center; margin-bottom: 20px"
+      >
+        <button
+          class="btn-back"
+          onclick="location.href = 'patient_dashboard.html'"
+          style="
+            background: #34495e;
+            color: white;
+            width: 60%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+          "
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+
+      <h1
+        style="
+          border-bottom: 2px solid #2c3e50;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        "
+      >
+        ⏰ Upcoming Medication Reminders
+      </h1>
+
+      <!-- Reminders Table -->
+      <div class="card" style="margin-top: 30px">
+        <div class="table-container">
+          <table style="width: 100%; border-collapse: collapse">
+            <thead style="background: #5d7a71; color: white">
+              <tr>
+                <th style="padding: 15px; text-align: left">Medicine</th>
+                <th style="padding: 15px; text-align: left">Time</th>
+                <th style="padding: 15px; text-align: left">Status</th>
+                <th style="padding: 15px; text-align: left">Dose ID</th>
+                <th style="padding: 15px; text-align: left">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reminderTableBody">
+              <tr>
+                <td colspan="5" style="padding: 20px; text-align: center">
+                  Loading reminders...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/reminders.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof loadReminders === "function") loadReminders();
+
+        // Check notifications every 30 sec
+        setInterval(() => {
+          if (typeof checkNotifications === "function") checkNotifications();
+        }, 30000);
+      });
+    </script>
+  </body>
+</html>
