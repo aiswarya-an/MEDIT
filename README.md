@@ -165,47 +165,85 @@ FIG 1.1 Login page
 ---
 
 FIG 1.2 Registration page
-![Uploading Screenshot (18).png…]()
 
+<img width="1920" height="1080" alt="Screenshot (18)" src="https://github.com/user-attachments/assets/2463a85e-38be-44c8-9ccc-48e5fc151c69" />
+
+---
 
 FIG 1.3 Profile Setup
-![Uploading Screenshot (20).png…]()
 
+<img width="1920" height="1080" alt="Screenshot (20)" src="https://github.com/user-attachments/assets/829d7200-f610-401a-966c-9778ae31d171" />
+
+---
 
 FIG 2.1 Patient Dashboard
 
+<img width="1920" height="1080" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/e40bc753-5376-4204-beb4-4ad67b11fc26" />
+
+---
 
 FIG 2.2 Medicine Management
 
+<img width="1920" height="1080" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/7ad52c60-4ef0-43b8-a027-4116b9bf46c1" />
+
+---
 
 FIG 2.3 Medicine list
 
+<img width="1920" height="1080" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/f089cd76-6853-4028-b58e-240258e00107" />
+
+---
 
 FIG 2.4 Upcoming Medicine reminders
 
+<img width="1920" height="1080" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/8f8ed03b-86c2-4448-b109-29283b2e3328" />
+
+---
 
 FIG 2.5 Prescription Management
-![Uploading Screenshot (12).png…]()
+
+<img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/8f96ae5b-a5ff-483b-9c54-5aa56d425e7a" />
+
+---
 
 FIG 2.6 Weekly adherence report
 
+<img width="1920" height="1080" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/a70e8519-f1f8-4ba5-80e7-9819967f0938" />
+
+---
 
 FIG 2.7 Export report
 
+<img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ab9f9b98-cd2e-4437-b8a4-1aea213d81ac" />
+
+---
 
 FIG 2.8 Send link request
 
+<img width="1920" height="1080" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/94842e09-63de-4b97-b3ad-9182e863b2cb" />
+
+---
 
 FIG 2.9 Link Caregiver management
 
+<img width="1920" height="1080" alt="Screenshot (16)" src="https://github.com/user-attachments/assets/9b820f97-4370-4bda-bf6b-4fb5ddbfef70" />
+
+---
 
 FIG 2.10 Patient profile
 
+<img width="1920" height="1080" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/9408227a-9905-4911-acc5-c477897a6aed" />
+
+---
 
 FIG 3.1 Caregiver dashboard
-![Uploading Screenshot (22).png…]()
 
+<img width="1920" height="1080" alt="Screenshot (22)" src="https://github.com/user-attachments/assets/97ce10ff-24c6-4c44-8c5d-7e00b40eda47" />
+
+---
 
 FIG 3.2 Caregiver profile
-![Uploading Screenshot (23).png…]()
+
+<img width="1920" height="1080" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/aaf80dc0-4184-4c21-8d33-42f9f9212835" />
+
 
