@@ -24,7 +24,7 @@ The system provides automated reminders, refill alerts, weekly adherence reports
 ### Caregiver Features
 - Monitor Patient Adherence
 - View Weekly Reports
-- Link with Patients
+- Accept or Reject Link requests with Patients
 - Receive Patient Updates
 
 ---
@@ -142,6 +142,70 @@ http://localhost:5000
 
 ---
 
-## License
+## My Contributions 
+
+- Developed backend functionalities using Node.js and Express.js.
+- Designed and implemented the MySQL database schema.
+- Created and managed database tables for users, medicines, prescriptions, and dose records.
+- Implemented CRUD operations for medicine management.
+- Integrated frontend components with backend APIs.
+- Implemented authentication and user data handling.
+- Performed database validation.
+  
+## Academic Project
 
 This project is developed for academic and educational purposes.
+
+## Screenshots
+
+FIG 1.1 Login page
+
+<img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/0a084993-83fd-4787-bac4-79fb2d835a5a" />
+
+---
+
+FIG 1.2 Registration page
+![Uploading Screenshot (18).png…]()
+
+
+FIG 1.3 Profile Setup
+![Uploading Screenshot (20).png…]()
+
+
+FIG 2.1 Patient Dashboard
+
+
+FIG 2.2 Medicine Management
+
+
+FIG 2.3 Medicine list
+
+
+FIG 2.4 Upcoming Medicine reminders
+
+
+FIG 2.5 Prescription Management
+![Uploading Screenshot (12).png…]()
+
+FIG 2.6 Weekly adherence report
+
+
+FIG 2.7 Export report
+
+
+FIG 2.8 Send link request
+
+
+FIG 2.9 Link Caregiver management
+
+
+FIG 2.10 Patient profile
+
+
+FIG 3.1 Caregiver dashboard
+![Uploading Screenshot (22).png…]()
+
+
+FIG 3.2 Caregiver profile
+![Uploading Screenshot (23).png…]()
+
